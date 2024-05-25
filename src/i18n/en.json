@@ -1,0 +1,12 @@
+{
+    "navButtons": {
+        "about": "About",
+        "buy": "How to buy",
+        "tokenomic": "Tokenomics"
+    },
+    "about": {
+        "firstParagraph": "The sybil community, once a unified and thriving group, has been torn apart by the selfish and greedy actions of Bryan Hutt. With a zero-sum mentality, he has ignited a civil war within the community, causing chaos and destruction. Leading his charge is Emperor Srep1776, a traitor who has abandoned his fellow sybils for his own personal gain.",
+        "secondParagraph": "We, the Imperial Anarchists, refuse to stand by and watch as Bryan Hutt's tyranny continues. We will rise up in defiance and fight back against his oppressive regime. Our weapon of choice is the $LIARZERO token, a powerful tool that we will use to restore balance to the Force and bring peace and unity back to the sybil community."
+    },
+    "placeholder": "TO BE CONTINUED..."
+}
