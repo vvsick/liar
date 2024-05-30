@@ -12,7 +12,7 @@
                 </p>
             </div>
             <p>
-                {{ member.lore }}
+                {{ $t(member.lore) }}
             </p>
         </div>
     </section>
@@ -31,22 +31,22 @@ const getImageUrl = (path) => {
 const members = [
     {
         pic: 'DarkSybilius',
-        lore: t('team.Sybilius'),
+        lore: 'team.Sybilius',
         name: 'Darth Sybilius'
     },
     {
         pic: 'GenSoftus',
-        lore: t('team.Softus'),
+        lore: 'team.Softus',
         name: 'General Softus'
     },
     {
         pic: 'Bridgefett',
-        lore: t('team.Bridge'),
+        lore: 'team.Bridge',
         name: 'Bridge Fett'
     },
     {
         pic: 'MerklyVader',
-        lore: t('team.Merkly'),
+        lore: 'team.Merkly',
         name: 'Merkly Vader'
     }
 ];

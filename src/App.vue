@@ -7,7 +7,6 @@
     <BuySection />
     <RoadmapSection />
     <TeamSection />
-    <!-- <ContinueText /> -->
     <div class="app-stars"></div>
   </div>
 </template>
@@ -20,7 +19,6 @@ import TheHeader from './components/TheHeader.vue';
 import UpOnly from './components/UpOnly.vue';
 import IntroSection from './components/IntroSection.vue';
 import AboutSection from './components/AboutSection.vue';
-import ContinueText from './components/ContinueText.vue';
 import RoadmapSection from './components/RoadmapSection.vue';
 import TeamSection from './components/TeamSection.vue';
 import BuySection from './components/BuySection.vue';
@@ -28,6 +26,11 @@ import BuySection from './components/BuySection.vue';
 const app = ref(null);
 
 const { y } = useWindowScroll();
+
+onMounted(() => {
+  y.value = document.body.scrollHeight
+})
+
 watch(y, () => {
   document.documentElement.style.setProperty('--scrollTop', `${y.value / 2}px`)
 });
