@@ -10,6 +10,23 @@
             </div>
         </div>
         <p>{{ $t('buy.choose') }}</p>
+        <ul>
+            <li>
+                Минимальный депозит 1 TON или эквивалент USDT в сети TON
+            </li>
+            <li>
+                Во время предпродажи будет собрано 50.000 TON
+            </li>
+            <li>
+                Средства, собранные сверх  лимита, будут возвращены в эквиваленте USDT в сети TON
+            </li>
+            <li>
+                Депозит менее 1 TON будет использоваться для выкупа токенов и их сжигания и НЕ будут возвращены
+            </li>
+            <li>
+                Используйте только некастодиальные (небиржевые) кошельки
+            </li>
+        </ul>
         <h2>{{ $t('buy.how') }}</h2>
         <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
     </section>
@@ -86,6 +103,12 @@ onMounted(() => {
         margin: 0 auto 0;
     }
 
+    & > ul {
+        line-height: 22px;
+        display: inline-block;
+        text-align: left
+    }
+
     &-container {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -120,7 +143,7 @@ button {
                 flex-direction: column;
         text-align: center;
         width: 100%;
-        padding: 180px 8% 100px;
+        padding: 80px 8% 100px;
 
         &-container {
             -webkit-box-orient: vertical;
