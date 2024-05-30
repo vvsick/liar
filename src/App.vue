@@ -28,11 +28,9 @@ const app = ref(null);
 const { y } = useWindowScroll();
 
 onMounted(() => {
+  console.log(y.value)
+  console.log(document.body.scrollHeight)
   y.value = document.body.scrollHeight
-})
-
-watch(y, () => {
-  document.documentElement.style.setProperty('--scrollTop', `${y.value / 2}px`)
 });
 </script>
 

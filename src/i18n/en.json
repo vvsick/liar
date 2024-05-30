@@ -12,7 +12,14 @@
     "buy": {
         "how": "HOW TO BUY",
         "choose": "To choose your side copy one of adresses above",
-        "address": "address:"
+        "address": "address:",
+        "info": {
+            "1": "Minimum deposit of 1 TON or equivalent USDT in the TON network",
+            "2": "50,000 TON will be collected during the presale",
+            "3": "Funds collected in excess of the limit will be returned in equivalent USDT in the TON network",
+            "4": "Deposits of less than 1 TON will be used to buy back and burn tokens and will NOT be returned",
+            "5": "Use only non-custodial (non-exchange) wallets"
+        }
     },
     "roadmap": {
         "roadmap": "ROADMAP",

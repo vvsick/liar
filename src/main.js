@@ -18,11 +18,18 @@ const i18n = createI18n({
 });
 
 const router = createRouter({
-    routes: [{ path: '/#*', redirect: '/' }],
+    routes: [{
+        path: '/',
+        component: App
+    }],
     history: createWebHistory(),
     scrollBehavior (to, from, savedPosition) {
         return { top: document.body.scrollHeight }
     }
+})
+
+router.beforeEach((to, from) => {
+    return '/'
 })
 
 const app = createApp(App, {
