@@ -4,7 +4,10 @@
     <UpOnly/>
     <IntroSection/>
     <AboutSection />
-    <ContinueText />
+    <BuySection />
+    <RoadmapSection />
+    <TeamSection />
+    <!-- <ContinueText /> -->
     <div class="app-stars"></div>
   </div>
 </template>
@@ -18,6 +21,9 @@ import UpOnly from './components/UpOnly.vue';
 import IntroSection from './components/IntroSection.vue';
 import AboutSection from './components/AboutSection.vue';
 import ContinueText from './components/ContinueText.vue';
+import RoadmapSection from './components/RoadmapSection.vue';
+import TeamSection from './components/TeamSection.vue';
+import BuySection from './components/BuySection.vue';
 
 const app = ref(null);
 
@@ -25,21 +31,13 @@ const { y } = useWindowScroll();
 watch(y, () => {
   document.documentElement.style.setProperty('--scrollTop', `${y.value / 2}px`)
 });
-
-const scrollDown = () => {
-  app.value.scrollIntoView(false)
-};
-
-onMounted(() => {
-  scrollDown()
-});
-
 </script>
 
 <style lang="scss">
 .app {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   min-height: 3000px;
   position: relative;
   box-sizing: border-box;
@@ -62,7 +60,7 @@ onMounted(() => {
     radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0))
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
   }
 }
 

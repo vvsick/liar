@@ -22,10 +22,7 @@ if (curLang) {
 watch(checked, () => {
     locale.value === 'en' ? locale.value = 'ru' : locale.value = 'en'
     localStorage.setItem('lang', locale.value)
-})
-const switchLang = () => {
-    console.log(locale.value)
-};
+});
 </script>
 
 <style lang="scss" scoped>

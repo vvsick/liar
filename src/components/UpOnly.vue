@@ -21,9 +21,15 @@
     z-index: 7;
     width: 100%;
     bottom: 100px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     letter-spacing: 1px;
     font-size: 20px;
     color: #FFF;

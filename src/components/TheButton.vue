@@ -1,30 +1,30 @@
 <template>
-    <button class="button" disabled=props.isActive>
+    <a :href="props.link" class="button">
         {{ props.text }}
-    </button>
+    </a>
 </template>
 
 <script setup>
 const props = defineProps({
     text: String,
-    link: String,
-    isActive: Boolean
+    link: String
 });
 </script>
 
 <style lang="scss" scoped>
 .button {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 10px;
     background-color: #FFE81F;
     border-radius: 12px;
     border: none;
     cursor: pointer;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
     font-size: 20px;
-
-    &:disabled {
-        cursor: not-allowed;
-    }
+    text-decoration: none;
+    color: black;
 }
 </style>

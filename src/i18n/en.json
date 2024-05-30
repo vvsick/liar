@@ -2,11 +2,45 @@
     "navButtons": {
         "about": "About",
         "buy": "How to buy",
-        "tokenomic": "Tokenomics"
+        "roadmap": "Roadmap"
     },
     "about": {
         "firstParagraph": "The sybil community, once a unified and thriving group, has been torn apart by the selfish and greedy actions of Bryan Hutt. With a zero-sum mentality, he has ignited a civil war within the community, causing chaos and destruction. Leading his charge is Emperor Srep1776, a traitor who has abandoned his fellow sybils for his own personal gain.",
         "secondParagraph": "We, the Imperial Anarchists, refuse to stand by and watch as Bryan Hutt's tyranny continues. We will rise up in defiance and fight back against his oppressive regime. Our weapon of choice is the $LIARZERO token, a powerful tool that we will use to restore balance to the Force and bring peace and unity back to the sybil community."
     },
-    "placeholder": "TO BE CONTINUED..."
+    "placeholder": "TO BE CONTINUED...",
+    "buy": {
+        "how": "HOW TO BUY",
+        "choose": "To choose your side copy one of adresses above",
+        "address": "address:"
+    },
+    "roadmap": {
+        "roadmap": "ROADMAP",
+        "first": {
+            "1": "1) The beginning of $LIARZERO expansion on Twitter and Telegram",
+            "2": "2) Launch of the game 'Sybil wars'"
+        },
+        "second": {
+            "1": "1) Presale",
+            "2": "2) AIRDROP to users of the game 'Sybil Wars'",
+            "3": "3) Arrival in ToTheMoon",
+            "4": "4) Listing on DEX/CEX"
+        },
+        "third": {
+            "1": "1) Creation of interactive quests for onboarding new users",
+            "2": "2) New KOLs",
+            "3": "3) New partnerships",
+            "4": "4) New listings"
+        },
+        "fourth": {
+            "1": "1) A new Death Star for every loyal sybil"
+        }
+    },
+    "tokenomics": "TOKENOMICS",
+    "team": {
+        "Sybilius": "Made 100k accounts, each with 100+ STG, voted in every proposal on snapshot.org",
+        "Softus": "Made 1k transactions with software on their own accounts in defi kingdoms",
+        "Bridge": "Made 50% of the total transaction volume of the Aptos bridge",
+        "Merkly": "Came up with the Merkly project to abuse Layer Zero"
+    }
 }
