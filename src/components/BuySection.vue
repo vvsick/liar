@@ -1,33 +1,5 @@
 <template>
     <section class="buy" ref="buy" id="buy">
-        <div class="buy-container">
-            <div v-for="(ref, id) in addresses"
-            :key="id"
-            >
-                <p>{{ ref.isGay }}</p>
-                <p class="address">{{ $t('buy.address') }} {{ ref.address }}</p>
-                <button @click="copy(ref.address)">copy</button>
-            </div>
-        </div>
-        <p>{{ $t('buy.choose') }}</p>
-        <ul>
-            <li>
-                {{ $t('buy.info.1') }}
-            </li>
-            <li>
-                {{ $t('buy.info.2') }}
-            </li>
-            <li>
-                {{ $t('buy.info.3') }}
-            </li>
-            <li>
-                {{ $t('buy.info.4') }}
-            </li>
-            <li>
-                {{ $t('buy.info.5') }}
-            </li>
-        </ul>
-        <h2>{{ $t('buy.how') }}</h2>
         <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
     </section>
 </template>

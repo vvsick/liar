@@ -28,10 +28,6 @@ const router = createRouter({
     }
 })
 
-router.beforeEach((to, from) => {
-    return '/'
-})
-
 const app = createApp(App, {
     setup() {
         const {t} = useI18n();

@@ -28,9 +28,9 @@ const app = ref(null);
 const { y } = useWindowScroll();
 
 onMounted(() => {
-  console.log(y.value)
-  console.log(document.body.scrollHeight)
-  y.value = document.body.scrollHeight
+  setTimeout(() => {
+    y.value = document.body.scrollHeight
+  }, 1);
 });
 </script>
 
