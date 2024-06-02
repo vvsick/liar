@@ -1,10 +1,6 @@
 <template>
     <section class="info">
         <div class="info-container">
-            <div class="info-container__img">
-                <img src="../assets/images/tokenomics.png" alt="tokenomics" />
-            </div>
-            <h2>{{ $t('tokenomics') }}</h2>
             <div class="info-container__img roadmap">
                 <img src="../assets/images/roadmap.png" alt="roadmap" />
                 <span class="first">
