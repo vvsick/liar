@@ -11,7 +11,7 @@
                     {{ member.name }}
                 </p>
             </div>
-            <p>
+            <p class="inter">
                 {{ $t(member.lore) }}
             </p>
         </div>
@@ -101,8 +101,8 @@ onMounted(() => {
             overflow: hidden;
             border-radius: 30px;
             background-color: rgba($color: #fff, $alpha: .1);
-            -webkit-backdrop-filter: blur(20px);
-                    backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(2px);
+                    backdrop-filter: blur(2px);
 
             & > img {
                 height: auto;
@@ -111,7 +111,7 @@ onMounted(() => {
         }
 
         &__name {
-            font-size: 1.3vw;
+            font-size: 1.5vw;
         }
     }
 }

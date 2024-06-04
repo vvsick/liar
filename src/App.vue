@@ -1,8 +1,8 @@
 <template>
-  <div class="app" ref="app">
+  <div class="app" v-if="isPageLoaded">
     <TheHeader/>
     <UpOnly/>
-    <IntroSection/>
+    <IntroSection ref="intro"/>
     <AboutSection />
     <BuySection />
     <RoadmapSection />
@@ -12,8 +12,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
-import { useWindowScroll } from '@vueuse/core/index';
+import { ref, onMounted } from 'vue';
 
 import TheHeader from './components/TheHeader.vue';
 import UpOnly from './components/UpOnly.vue';
@@ -23,14 +22,13 @@ import RoadmapSection from './components/RoadmapSection.vue';
 import TeamSection from './components/TeamSection.vue';
 import BuySection from './components/BuySection.vue';
 
-const app = ref(null);
-
-const { y } = useWindowScroll();
+const isPageLoaded = ref(false);
+const intro = ref(null);
 
 onMounted(() => {
-  setTimeout(() => {
-    y.value = document.body.scrollHeight
-  }, 1);
+  window.addEventListener('load', () => {
+    isPageLoaded.value = true;
+  })
 });
 </script>
 
@@ -54,14 +52,7 @@ onMounted(() => {
     width: 100%;
     z-index: 1;
     background-color: transparent;
-    background-image: 
-    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
-    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+    background-image: url('./assets/images/stars-pattern.png');
   }
 }
 

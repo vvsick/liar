@@ -1,15 +1,20 @@
 <template>
     <section class="about" id="about">
+        <div class="section-header">
+            <h2>{{$t('navButtons.about')}}</h2>
+        </div>
         <div class="about-container">
-            <p class="about-container__text animate__animated" id="about-animate">
-                {{ $t('about.secondParagraph') }}
-            </p>
             <div class="about-container__img animate__animated" id="about-animate">
                 <img src="../assets/images/sobranie.jpg" alt="background">
             </div>
-            <p class="about-container__text animate__animated" id="about-animate">
-                {{ $t('about.firstParagraph') }}
-            </p>
+            <div class="about-container__text">
+                <p class="animate__animated inter" id="about-animate">
+                    {{ $t('about.firstParagraph') }}
+                </p>
+                <p class="animate__animated inter" id="about-animate">
+                    {{ $t('about.secondParagraph') }}
+                </p>
+            </div>
         </div>
     </section>
 </template>
@@ -42,15 +47,11 @@ onMounted(() => {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: row;
     text-align: center;
     z-index: 5;
     width: 100%;
-    padding: 60px 8% 500px;
-
+    padding: 180px 8% 500px;
 
     &-container {
         width: 100%;
@@ -59,32 +60,41 @@ onMounted(() => {
         padding: 20px 10%;
         border-radius: 12px;
 
+        &__text {
+            display: flex;
+            flex-direction: row;
+            font-size: 18px;
+            text-align: start;
+            gap: 8%;
+        }
+
         &__img {
-            width: 100%;
-            margin: 60px 0 60px;
+            width: 60%;
+            margin: 0 auto 32px;
+            border-radius: 30px;
             position: relative;
 
-            & > * {
-                height: auto;
-                width: 100%;
-                margin: 0 auto 0;
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 167%;
+                border-radius: 20px;
+                border: 1px solid white;
+                height: 90%;
+                top: 5%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                background: rgba($color: #fff, $alpha: .1);
             }
-        }
 
-        &__text {
-            font-size: 22px;
-        }
-    }
-}
-
-@media screen and (max-width: 1480px) {
-    .about {
-        padding: 60px 8% 600px;
-
-        &-container {
-
-            &__text {
-                font-size: 18px;
+            & > img {
+                width: 100%;
+                position: inherit;
+                z-index: 10;
+                border-radius: inherit;
+                border: 1px solid white;
+                margin: 0 auto;
             }
         }
     }
@@ -92,9 +102,20 @@ onMounted(() => {
 
 @media screen and (max-width: 860px) {
     .about {
+        padding-bottom: 0;
+
         &-container {
             &__text {
                 font-size: 16px;
+                flex-direction: column-reverse;
+            }
+
+            &__img {
+                width: 100%;
+
+                &::before {
+                    content: none;
+                }
             }
         }
     }

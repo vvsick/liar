@@ -14,7 +14,7 @@ const { y } = useWindowScroll();
 
 const { width } = useWindowSize();
 
-const trY = width.value > 860 ? [-300, -200] : [-500, -100];
+const trY = width.value > 860 ? [-400, 0] : [-600, -300];
 const trX = width.value > 860 ? [1200, -1200] : [600, -600];
 const rotate = width.value > 860 ? [300] : [300, 300];
 
@@ -31,8 +31,12 @@ onMounted(() => {
     const scrollPercent = () => {
         const docST = document.documentElement.scrollTop;
         const docSH = document.documentElement.scrollHeight;
-        
-        return (docSH - docST - (docSH / 100 * 20)) / (docSH - (docSH / 100 * 90)) * 100
+
+        if (width.value > 860) {
+            return (docSH - docST - (docSH / 100 * 35)) / (docSH - (docSH / 100 * 90)) * 100
+        } else {
+            return (docSH - docST - (docSH / 100 * 25)) / (docSH - (docSH / 100 * 90)) * 100
+        }        
     }
 
     watch(y, () => {
@@ -65,6 +69,12 @@ onMounted(() => {
             -ms-transform: rotate(350deg);
                 transform: rotate(350deg);
         width: 54%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .flying {
+        width: 230px;
     }
 }
 </style>

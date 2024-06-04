@@ -1,6 +1,6 @@
 <template>
-    <section class="intro">
-        <h1 class="intro-ticker" :class="{'hidden': -y > -yOffset}">$LIARZERO</h1>
+    <section class="intro" ref="intro">
+        <h1 class="intro-ticker" :class="{'hidden': -y > -yOffset}">LIARZERO</h1>
         <img src="../assets/images/IntroBack.png" alt="Bryan the Hutt image" class="intro-back" draggable="false">
         <FlyingFett />
     </section>
@@ -8,31 +8,34 @@
 
 <script setup>
 import { useWindowScroll, useWindowSize } from '@vueuse/core';
-import { watch, onMounted } from 'vue';
+import { ref, watch, onMounted, nextTick } from 'vue';
 import anime from 'animejs';
+const intro = ref(null);
 
 import FlyingFett from './FlyingFett.vue';
 
 const { y } = useWindowScroll();
 const { width } = useWindowSize();
 
-const yOffset = width.value < 860 ? 3000 : 4500
+const yOffset = width.value < 860 ? 3000 : 2500
 
 onMounted(() => {
-        const ticker = anime({
-        targets: '.intro-ticker',
-        opacity: [1, 0],
-        scale: [1, .7],
-        easing: 'linear',
-        autoplay: false
-    })
+    intro.value.scrollIntoView(false);
+    
+    const ticker = anime({
+    targets: '.intro-ticker',
+    opacity: [1, 0],
+    scale: [1, .7],
+    easing: 'linear',
+    autoplay: false
+})
 
     const scrollPercent = () => {
         const docST = document.documentElement.scrollTop;
         const docSH = document.documentElement.scrollHeight;
 
         if (width.value > 860) {
-            return (docSH - docST - (docSH / 100 * 20)) / (docSH - (docSH / 100 * 90)) * 100
+            return (docSH - docST - (docSH / 100 * 30)) / (docSH - (docSH / 100 * 85)) * 100
         } else {
             return (docSH - docST - (docSH / 100 * 30)) / (docSH - (docSH / 100 * 90)) * 100
         }
@@ -102,22 +105,22 @@ onMounted(() => {
 @media screen and (max-width: 860px) {
     .intro {
         position: relative;
-        overflow-x: hidden;
-        height: 1500px;
+        overflow: hidden;
+        height: 1300px;
         margin-top: 30%;
 
         &-back {
             position: absolute;
             width: 180%;
             bottom: 0;
-            left: 50%;
+            left: 60%;
             -webkit-transform: translate(-50%, 0);
                 -ms-transform: translate(-50%, 0);
-                    transform: translate(-50%, 0);
+                    transform: translate(-50%, 0) scale(1.5);
         }
 
         &-ticker {
-            top: 30%;
+            bottom: 30%;
             font-size: 50px;
         }
     }

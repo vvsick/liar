@@ -1,51 +1,33 @@
 <template>
     <section class="info">
-        <div class="info-container">
-            <div class="info-container__img roadmap">
-                <img src="../assets/images/roadmap.png" alt="roadmap" />
-                <span class="first">
-                    <p>
-                        {{ $t('roadmap.first.1') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.first.2') }}
-                    </p>
-                </span>
-                <span class="second">
-                    <p>
-                        {{ $t('roadmap.second.1') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.second.2') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.second.3') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.second.4') }}
-                    </p>
-                </span>
-                <span class="third">
-                    <p>
-                        {{ $t('roadmap.third.1') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.third.2') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.third.3') }}
-                    </p>
-                    <p>
-                        {{ $t('roadmap.third.4') }}
-                    </p>
-                </span>
-                <span class="fourth">
-                    <p>
-                        {{ $t('roadmap.fourth.1') }}
-                    </p>
-                </span>
-            </div>
+        <div class="section-header">
             <h2 id="roadmap">{{ $t('roadmap.roadmap') }}</h2>
+        </div>
+        <div class="info-container">
+            <div class="info-container__cards">
+                <div 
+                class="card"
+                v-for="(object, id) in $tm('roadmap.items')"
+                :key="id"
+                >
+                    <div class="card-number">
+                        <p>
+                            {{ id }}
+                        </p>
+                    </div>
+                    <ul class="inter">
+                        <li 
+                        v-for="(item, id) in object"
+                        :key="id"
+                        >
+                            {{ $t(`${item}`) }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-container__img">
+                <img src="../assets/images/roadmap.png" alt="roadmap" />
+            </div>
         </div>
     </section>
 </template>
@@ -62,18 +44,26 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
+    align-items: center;
+    flex-direction: row;
     z-index: 5;
     width: 100%;
-    padding: 60px 8% 100px;
+    padding: 180px 8% 0;
 
     &-container {
+        width: 100%;
         border-radius: 12px;
-        padding: 20px 10%;
+        padding-left: 5%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        &__cards {
+            display: flex;
+            gap: 20px;
+            width: 80%;
+            flex-direction: column-reverse;
+        }
 
         & > h2 {
             font-size: 2.1vw;
@@ -82,65 +72,80 @@
 
         &__img {
             width: 100%;
-            
-            & > img {
-                width: 100%;
-                height: auto;
-                margin: 80px auto;
+            position: relative;
+
+            & img {
+                width: 120%;
+                top: 50%;
+                transform: translate(0, -50%);
+                left: -12%;
+                position: absolute;
             }
         }
     }
 }
 
-.roadmap {
-    position: relative;
+.card {
+    padding: 22px 12px 22px 36px;
+    border-radius: 20px;
+    background: rgba($color: #fff, $alpha: .2);
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
 
-    & > span {
-        text-align: left;
-        position: absolute;
-        width: 40%;
-        font-size: 1.3vw;
-
-        &.first {
-            bottom: 12%;
-            left: 35%;
+    & ul {
+        & li {
+            margin: 10px 0;
         }
-        
-        &.second {
-            bottom: 30%;
-            right: -25%;
-        }
-
-        &.third {
-            top: 30%;
-            left: 45%;
-        }
-        
-        &.fourth {
-            top: 10%;
-            left: 26%;
-        }
+    }
+    
+    &-number {
+        font-size: 32px;
+        color: #FFE81F;
+        filter: drop-shadow(0 0 5px rgba(#FFE81F, .6));
     }
 }
 
 @media screen and (max-width: 860px) {
-        .roadmap {
+    .info {
+        &-container {
+            flex-direction: column;
+            // position: relative;
+            z-index: 2;
 
-        & > span {
-            
-            &.second {
-                width: 35%;
-                right: -20%;
+            &__cards {
+                width: 100%;
             }
 
-            &.third {
-                width: 35%;
-                top: 33%;
+            &__img {
+                position: static;
+
+                & > img {
+                    width: 100%;
+                    top: 40%;
+                    left: 60%;
+                    transform: translate(-50%, 0);
+                }
             }
-            
-            &.fourth {
-                top: 18%;
-            }
+        }
+    }
+
+    .card {
+        padding: 12px 6px 12px 18px;
+        position: relative;
+        z-index: 10;
+
+        &-number {
+            font-size: 26px;
+        }
+
+        & ul {
+            font-size: 14px;
+            color: #000;
+            font-weight: 600;
         }
     }
 }

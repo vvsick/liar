@@ -1,6 +1,21 @@
 <template>
     <section class="buy" ref="buy" id="buy">
-        <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
+        <div class="section-header">
+            <h2>
+                {{ $t('buy.how') }}
+            </h2>
+        </div>
+        <div class="buy-container">
+            <div class="buy-container__content inter">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                </p>
+                <p>
+                    CA: <span>{{address}}</span>
+                </p>
+            </div>
+            <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
+        </div>
     </section>
 </template>
 
@@ -10,16 +25,7 @@ import { onMounted, ref } from 'vue';
 
 const buy = ref(null);
 
-const addresses = [
-    {
-        isGay: 'SYBIL ENJOYER',
-        address: 'liarzero.ton'
-    },
-    {
-        isGay: 'BRYAN FAN',
-        address: 'UQBwnbDKPEkuaICV-SiMP_k1BCKNo6Dk51heLdl7_7_o_tQD'
-    }
-];
+const address = 'TBA'
 
 const copy = (address) => {
     window.navigator.clipboard.writeText(address)
@@ -58,42 +64,33 @@ onMounted(() => {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: row;
     text-align: center;
     width: 100%;
-    padding: 180px 8% 100px;
-
-    & > h2 {
-        font-size: 2.1vw;
-    }
-
-    & > img {
-        width: 80%;
-        margin: 0 auto 0;
-    }
-
-    & > ul {
-        line-height: 22px;
-        display: inline-block;
-        text-align: left
-    }
+    padding: 180px 8% 0;
 
     &-container {
-        display: -webkit-box;
-        display: -ms-flexbox;
+        width: 100%;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-                justify-content: space-evenly;
-        margin: 10px 0 30px;
+        flex-direction: row;
+        text-align: left;
+        padding-left: 5%;
+
+        & > img {
+            width: 50%;
+            margin: 0 auto 0;
+        }
+        
+        &__content {
+            width: 40%;
+        }
     }
+}
+
+span {
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(#FFE81F, .8);
 }
 
 button {
@@ -109,24 +106,22 @@ button {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
         text-align: center;
-        width: 100%;
-        padding: 80px 8% 100px;
 
         &-container {
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
                 -ms-flex-direction: column;
                     flex-direction: column;
-        }
-    }
 
-    .address {
-        font-size: 3.5vw;
+            &__content {
+                width: 100%;
+            }
+
+            & > img {
+                width: 100%;
+            }
+        }
     }
 }
 </style>

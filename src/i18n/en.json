@@ -1,7 +1,7 @@
 {
     "navButtons": {
         "about": "About",
-        "buy": "How to buy",
+        "buy": "BUY",
         "roadmap": "Roadmap"
     },
     "about": {
@@ -10,7 +10,7 @@
     },
     "placeholder": "TO BE CONTINUED...",
     "buy": {
-        "how": "HOW TO BUY",
+        "how": "Buy",
         "choose": "To choose your side copy one of adresses above",
         "address": "address:",
         "info": {
@@ -22,28 +22,29 @@
         }
     },
     "roadmap": {
-        "roadmap": "ROADMAP",
-        "first": {
-            "1": "1) The beginning of $LIARZERO expansion on Twitter and Telegram",
-            "2": "2) Launch of the game 'Sybil wars'"
-        },
-        "second": {
-            "1": "1) Presale",
-            "2": "2) AIRDROP to users of the game 'Sybil Wars'",
-            "3": "3) Arrival in ToTheMoon",
-            "4": "4) Listing on DEX/CEX"
-        },
-        "third": {
-            "1": "1) Creation of interactive quests for onboarding new users",
-            "2": "2) New KOLs",
-            "3": "3) New partnerships",
-            "4": "4) New listings"
-        },
-        "fourth": {
-            "1": "1) A new Death Star for every loyal sybil"
+        "roadmap": "Roadmap",
+        "items": {
+            "1": {
+                "1": "The beginning of $LIARZERO expansion on Twitter and Telegram",
+                "2": "Launch of the game 'Sybil wars'"
+            },
+            "2": {
+                "1": "AIRDROP to users of the game 'Sybil Wars'",
+                "2": "Arrival in ToTheMoon",
+                "3": "Listing on DEX/CEX"
+            },
+            "3": {
+                "1": "Creation of interactive quests for onboarding new users",
+                "2": "New KOLs",
+                "3": "New partnerships",
+                "4": "New listings"
+            },
+            "4": {
+                "1": "A new Death Star for every loyal sybil"
+            }
         }
     },
-    "tokenomics": "TOKENOMICS",
+    "tokenomics": "Tokenomics",
     "team": {
         "Sybilius": "Made 100k accounts, each with 100+ STG, voted in every proposal on snapshot.org",
         "Softus": "Made 1k transactions with software on their own accounts in defi kingdoms",

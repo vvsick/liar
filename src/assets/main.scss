@@ -1,0 +1,46 @@
+@import 'animate.css';
+
+@font-face {
+  font-family: "Star Wars Demolition Level";
+  src: url("./fonts/starwarsdemolitionlevel.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Star Wars Demolition Level";
+}
+
+* {
+  font-family: inherit;
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+
+#app {
+  height: 100%;
+}
+
+.section-header {
+  width: 6%;
+  writing-mode: tb;
+  position: relative;
+  z-index: 10;
+
+  & > h2 {
+    transform: rotate(180deg);
+    font-size: 40px;
+    margin: 0;
+    color: #FFE81F;
+    filter: drop-shadow(0 0 5px rgba(#FFE81F, .6));
+  }
+}
