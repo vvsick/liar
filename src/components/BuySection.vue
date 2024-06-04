@@ -8,11 +8,18 @@
         <div class="buy-container">
             <div class="buy-container__content inter">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                    80% LP Burned
+                </p>
+                <p>
+                    10% Marketing and team
+                </p>
+                <p>
+                    10% Airdrop
                 </p>
                 <p>
                     CA: <span>{{address}}</span>
                 </p>
+                <!-- <TheButton button-class="button disabled" link="/" text="Chart"/> -->
             </div>
             <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
         </div>
@@ -22,6 +29,7 @@
 <script setup>
 import anime from 'animejs';
 import { onMounted, ref } from 'vue';
+import TheButton from './TheButton.vue';
 
 const buy = ref(null);
 

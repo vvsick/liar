@@ -1,8 +1,8 @@
 <template>
-  <div class="app" v-if="isPageLoaded">
+  <div class="app" v-show="isPageLoaded">
     <TheHeader/>
     <UpOnly/>
-    <IntroSection ref="intro"/>
+    <IntroSection/>
     <AboutSection />
     <BuySection />
     <RoadmapSection />
@@ -13,6 +13,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useWindowScroll } from '@vueuse/core';
 
 import TheHeader from './components/TheHeader.vue';
 import UpOnly from './components/UpOnly.vue';
@@ -23,12 +24,20 @@ import TeamSection from './components/TeamSection.vue';
 import BuySection from './components/BuySection.vue';
 
 const isPageLoaded = ref(false);
-const intro = ref(null);
+const { y } = useWindowScroll();
 
 onMounted(() => {
-  window.addEventListener('load', () => {
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   isPageLoaded.value = true;
+  // })
+  window.onload = () => {
     isPageLoaded.value = true;
-  })
+    y.value = document.documentElement.scrollHeight;
+  }
+
+  window.addEventListener('load', () => {
+    y.value = document.documentElement.scrollHeight;
+  });
 });
 </script>
 

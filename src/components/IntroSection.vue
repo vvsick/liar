@@ -20,8 +20,15 @@ const { width } = useWindowSize();
 const yOffset = width.value < 860 ? 3000 : 2500
 
 onMounted(() => {
-    intro.value.scrollIntoView(false);
-    
+    y.value = document.documentElement.scrollHeight;
+    nextTick(() => {
+        intro.value.scrollIntoView(false);
+    })
+
+    // window.addEventListener('load', () => {
+    //     y.value = document.documentElement.scrollHeight;
+    // });
+
     const ticker = anime({
     targets: '.intro-ticker',
     opacity: [1, 0],

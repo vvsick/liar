@@ -8,7 +8,8 @@
 const props = defineProps({
     text: String,
     link: String,
-    buttonClass: String
+    buttonClass: String,
+    // isDisabled: Boolean
 });
 </script>
 
@@ -18,6 +19,11 @@ const props = defineProps({
     text-decoration: none;
     color: #FFE81F;
     filter: drop-shadow(0 0 10px rgba(#FFE81F, .6));
+}
+
+.disabled {
+    cursor: default;
+    pointer-events: none;
 }
 
 .button {
