@@ -7,13 +7,18 @@
         class="team-member animate__animated">
             <div class="team-member__pic">
                 <img :src="getImageUrl(member.pic)" :alt="member.pic" :class="member.pic">
-                <p class="team-member__name">
+                <p v-if="width > 860" class="team-member__name">
                     {{ member.name }}
                 </p>
             </div>
-            <p class="inter">
-                {{ $t(member.lore) }}
-            </p>
+            <div>
+                <p v-if="width <= 860" class="team-member__name">
+                    {{ member.name }}
+                </p>
+                <p class="inter">
+                    {{ $t(member.lore) }}
+                </p>
+            </div>
         </div>
     </section>
 </template>
@@ -21,8 +26,10 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useWindowSize } from '@vueuse/core';
 
 const { t } = useI18n({ useScope: 'global' });
+const { width } = useWindowSize();
 
 const getImageUrl = (path) => {
     return new URL(`../assets/images/${path}.png`, import.meta.url).href;
@@ -81,7 +88,7 @@ onMounted(() => {
     text-align: center;
     width: 100%;
     max-height: 650px;
-    padding: 120px 4% 100px;
+    padding: 120px 17% 0;
 
     &-member{
         display: -webkit-box;
@@ -140,9 +147,16 @@ onMounted(() => {
                 max-width: calc(100% - 190px);
             }
 
+            &__name {
+                font-size: 18px;
+                color: #FFE81F;
+            }
+
             &__pic {
                 height: 100%;
                 max-width: 30%;
+                padding: 5% 0;
+                border-radius: 20px;
                 float: left;
                 text-align: center;
                 margin-right: 10px;

@@ -57,7 +57,7 @@ onMounted(() => {
         width: 100%;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        padding: 20px 10%;
+        padding: 20px 5%;
         border-radius: 12px;
 
         &__text {

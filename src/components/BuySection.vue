@@ -19,7 +19,10 @@
                 <p>
                     CA: <span>{{address}}</span>
                 </p>
-                <!-- <TheButton button-class="button disabled" link="/" text="Chart"/> -->
+                <div class="buttons">
+                    <TheButton button-class="button disabled" link="/" text="Chart"/>
+                    <TheButton button-class="button disabled" link="/" text="Buy"/>
+                </div>
             </div>
             <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
         </div>
@@ -91,6 +94,10 @@ onMounted(() => {
         
         &__content {
             width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
         }
     }
 }
@@ -101,8 +108,16 @@ span {
     color: rgba(#FFE81F, .8);
 }
 
-button {
-    cursor: pointer;
+.buttons {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    gap: 5%;
+    cursor: not-allowed;
+}
+
+.button {
+    width: 50%;
 }
 
 @media screen and (max-width: 860px) {
@@ -130,6 +145,10 @@ button {
                 width: 100%;
             }
         }
+    }
+
+    .button {
+        width: 30%;
     }
 }
 </style>

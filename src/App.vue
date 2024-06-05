@@ -1,5 +1,5 @@
 <template>
-  <div class="app" v-show="isPageLoaded">
+  <div class="app" v-if="isPageLoaded">
     <TheHeader/>
     <UpOnly/>
     <IntroSection/>
@@ -32,11 +32,11 @@ onMounted(() => {
   // })
   window.onload = () => {
     isPageLoaded.value = true;
-    y.value = document.documentElement.scrollHeight;
+    y.value = Infinity;
   }
 
   window.addEventListener('load', () => {
-    y.value = document.documentElement.scrollHeight;
+    y.value = Infinity;
   });
 });
 </script>

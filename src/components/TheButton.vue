@@ -24,9 +24,11 @@ const props = defineProps({
 .disabled {
     cursor: default;
     pointer-events: none;
+    opacity: .5;
 }
 
 .button {
+    font-family: "Star Wars Demolition Level";
     height: 80px;
     width: 14%;
     display: flex;
@@ -46,13 +48,14 @@ const props = defineProps({
 
 @media screen and (max-width: 860px) {
     .text {
-        font-size: 22px;
+        font-size: 5vw;
     }
 
     .button {
         width: 20%;
+        height: 7vh;
         border-radius: 30px;
-        font-size: 26px;
+        font-size: 5.2vw;
         margin-bottom: 4%;
     }
 }

@@ -1,9 +1,9 @@
 <template>
     <section class="info">
         <div class="section-header">
-            <h2 id="roadmap">{{ $t('roadmap.roadmap') }}</h2>
+            <h2>{{ $t('roadmap.roadmap') }}</h2>
         </div>
-        <div class="info-container">
+        <div class="info-container" id="roadmap">
             <div class="info-container__cards">
                 <div 
                 class="card"
@@ -23,17 +23,21 @@
                             {{ $t(`${item}`) }}
                         </li>
                     </ul>
+                    <img v-if="width <= 860" :src="`./src/assets/images/r-mob-${id}.png`" alt="planet" />
                 </div>
             </div>
             <div class="info-container__img">
-                <img src="../assets/images/roadmap.png" alt="roadmap" />
+                <img v-if="width > 860" src="../assets/images/roadmap.png" alt="roadmap" />
+                <!-- <img v-else src="../assets/images/roadmap-mobile.png" alt="roadmap" /> -->
             </div>
         </div>
     </section>
 </template>
 
 <script setup>
+import { useWindowSize } from '@vueuse/core';
 
+const { width } = useWindowSize();
 </script>
 
 <style lang="scss" scoped>
@@ -48,7 +52,7 @@
     flex-direction: row;
     z-index: 5;
     width: 100%;
-    padding: 180px 8% 0;
+    padding: 18% 8% 0;
 
     &-container {
         width: 100%;
@@ -88,7 +92,7 @@
 .card {
     padding: 22px 12px 22px 36px;
     border-radius: 20px;
-    background: rgba($color: #fff, $alpha: .2);
+    background: rgba($color: #fff, $alpha: .1);
     backdrop-filter: blur(5px);
     box-sizing: border-box;
     display: flex;
@@ -113,39 +117,45 @@
     .info {
         &-container {
             flex-direction: column;
-            // position: relative;
-            z-index: 2;
+            position: relative;
+            z-index: 1;
 
             &__cards {
-                width: 100%;
+                width: 90%;
             }
 
             &__img {
                 position: static;
 
                 & > img {
-                    width: 100%;
-                    top: 40%;
-                    left: 60%;
-                    transform: translate(-50%, 0);
+                    width: 60%;
+                    top: 50%;
+                    left: 75%;
+                    z-index: 10;
                 }
             }
         }
     }
 
     .card {
-        padding: 12px 6px 12px 18px;
+        padding: 12px 14px 12px 18px;
         position: relative;
         z-index: 10;
+        gap: 4px;
 
         &-number {
             font-size: 26px;
         }
 
+        & > img {
+            position: absolute;
+            width: 45%;
+            right: -30%;
+            top: 16%;
+        }
+
         & ul {
             font-size: 14px;
-            color: #000;
-            font-weight: 600;
         }
     }
 }
