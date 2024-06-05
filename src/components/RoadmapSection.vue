@@ -23,7 +23,7 @@
                             {{ $t(`${item}`) }}
                         </li>
                     </ul>
-                    <img v-if="width <= 860" :src="`./src/assets/images/r-mob-${id}.png`" alt="planet" />
+                    <img v-if="width <= 860" :src="getImageUrl(id)" alt="planet" />
                 </div>
             </div>
             <div class="info-container__img">
@@ -38,6 +38,10 @@
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
+
+const getImageUrl = (path) => {
+    return new URL(`../assets/images/r-mob-${path}.png`, import.meta.url).href;
+};
 </script>
 
 <style lang="scss" scoped>
