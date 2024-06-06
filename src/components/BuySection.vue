@@ -17,11 +17,11 @@
                     10% Airdrop
                 </p>
                 <p>
-                    CA: <span>{{address}}</span>
+                    CA: <span class="address">{{address}}</span> <button @click="copy">copy</button>
                 </p>
                 <div class="buttons">
-                    <TheButton button-class="button disabled" link="/" text="Chart"/>
-                    <TheButton button-class="button disabled" link="/" text="Buy"/>
+                    <TheButton button-class="button" link="https://dexscreener.com/solana/be7kdb15uuho9fttjfbwhupkkwrzzymeeg3juehizxyd" text="Chart" target="_blank"/>
+                    <TheButton button-class="button" link="https://raydium.io/swap/?inputMint=sol&outputMint=EBtMsYyh5zFChwL3hv8xRzQp81o44Qb5fiABYMiEvZ7v" text="Buy" target="_blank"/>
                 </div>
             </div>
             <img src="../assets/images/lambo.png" alt="lamboship" class="ship">
@@ -36,7 +36,7 @@ import TheButton from './TheButton.vue';
 
 const buy = ref(null);
 
-const address = 'TBA'
+const address = 'EBtMsYyh5zFChwL3hv8xRzQp81o44Qb5fiABYMiEvZ7v';
 
 const copy = (address) => {
     window.navigator.clipboard.writeText(address)
@@ -67,6 +67,19 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+button {
+   background: #FFE81F; 
+   border: none;
+   font-size: 18px;
+   border-radius: 6px;
+   width: 60px;
+   height: 30px;
+}
+
+.address {
+    text-overflow: ellipsis;
+}
+
 .buy {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -113,7 +126,6 @@ span {
     width: 100%;
     display: flex;
     gap: 5%;
-    cursor: not-allowed;
 }
 
 .button {
@@ -145,6 +157,10 @@ span {
                 width: 100%;
             }
         }
+    }
+
+    .address {
+        font-size: 2.8vw;
     }
 
     .button {
