@@ -17,7 +17,7 @@
                     10% Airdrop
                 </p>
                 <p>
-                    CA: <span class="address">{{address}}</span> <button @click="copy">copy</button>
+                    CA: <span class="address">{{address}}</span> <button @click="copy(address)">copy</button>
                 </p>
                 <div class="buttons">
                     <TheButton button-class="button" link="https://dexscreener.com/solana/be7kdb15uuho9fttjfbwhupkkwrzzymeeg3juehizxyd" text="Chart" target="_blank"/>
